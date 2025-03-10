@@ -40,6 +40,12 @@
           "manage-lists",
           "crm"
         ]
+      },
+      {
+        "group": "Email Guide",
+        "pages": [
+          "email-marketing"
+        ]
       }
     ]
   },
@@ -56,6 +62,10 @@
       {
         "label": "데모 신청하기",
         "href": "https://relate.so/cal/workspaces/relate/teamkr"
+      },
+      {
+        "label": "소개서 다운로드",
+        "href": "https://relate.so/forms/l1wsbc9k26vllajx"
       },
       {
         "label": "문의하기",
