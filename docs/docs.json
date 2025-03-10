@@ -1,0 +1,66 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "스프레드(Spread) 가이드",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },
+  "favicon": "favicon.svg",
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "스프레드 앱",
+          "href": "https://app.spread.so/",
+          "icon": "computer"
+        },
+        {
+          "anchor": "스프레드 설정 페이지",
+          "href": "https://admin.spread.so/",
+          "icon": "gear"
+        },
+        {
+          "anchor": "Relate CRM",
+          "href": "https://www.relate.kr",
+          "icon": "money-bill-trend-up"
+        }
+      ]
+    },
+    "pages": [
+      {
+        "group": "Spread Guide",
+        "pages": [
+          "quickstart",
+          "domain",
+          "import",
+          "send-email",
+          "metrics",
+          "manage-lists",
+          "crm"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "스프레드 시작하기",
+        "href": "https://admin.spread.so/users/sign_up"
+      },
+      {
+        "label": "데모 신청하기",
+        "href": "https://relate.so/cal/workspaces/relate/teamkr"
+      },
+      {
+        "label": "문의하기",
+        "href": "mailto:we@relate.so"
+      }
+    ]
+  }
+}

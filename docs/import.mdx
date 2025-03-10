@@ -1,0 +1,101 @@
+---
+title: "임포트(Import)"
+description: "임포트를 통해 스프레드에 연락처를 가져오고 추가할 수 있습니다"
+sidebarTitle: "임포트"
+"og:title": "임포트(Import) | 스프레드 프로덕트 가이드"
+"og:description": "임포트를 통해 스프레드에 연락처를 가져오고 추가할 수 있습니다"
+"og:image": "https://relateso.sirv.com/spread/spread-docs.png"
+"twitter:title": "임포트(Import) | 스프레드 프로덕트 가이드"
+"twitter:description": "임포트를 통해 스프레드에 연락처를 가져오고 추가할 수 있습니다"
+"twitter:image": "https://relateso.sirv.com/spread/spread-docs.png"
+---
+
+## Overview
+
+임포트를 통해 연락처를 가져오고 추가할 수 있습니다. 현재 스프레드에서는 크게 두가지 방법으로 임포트를 할 수 있습니다.
+
+1. 리스트에서 바로 임포트하기
+2. 임포트 페이지에서 업로드하기
+
+## Basics
+
+### 1. 리스트에서 바로 임포트하기
+
+![import-list-csv](https://mintlify.s3.us-west-1.amazonaws.com/relatekr/images/setup/import-list-csv.png)
+
+리스트에서 바로 CSV 파일을 임포트할 수 있습니다. 리스트로 들어가 **+Contact** 버튼 > **CSV에서 가져오기**를 선택합니다.
+
+![import-list-options](https://mintlify.s3.us-west-1.amazonaws.com/relatekr/images/setup/import-list-options.png)
+
+이때, Import options라는 모달이 뜨며 다음과 같은 사항을 선택할 수 있습니다. (현재는 필수이며, 추후 선택으로 바뀔 예정입니다.)
+
+- **Link to an existing organization with the email domain**: Contact의 이메일 도메인을 확인하여 현재 존재하는 organization의 도메인과 일치한다면 해당 organization에 연결시킵니다.
+- **Create an organization with the email domain**: Contact의 이메일 도메인과 맞는 organization이 없다면 이메일 도메인에 맞춰 organization을 생성합니다.
+
+<Info>
+List 임포트 과정에서 알아두어야 할 점이 2가지 있습니다.
+
+1. .CSV 파일에 있는 새로운 organization과 contact은 바로 생성이 완료됩니다.
+2. 기존 organization과 contact이 임포트한 .CSV 파일에 있다면 기존 데이터를 찾아 리스트에 추가하여 중복 생성을 하지 않습니다. 이때, 기존 데이터에 정보를 업데이트 해서 .CSV 파일을 임포트 하여도 새로 작성한 정보로 자동 업데이트되지 않습니다.
+</Info>
+
+
+### 2. 엑셀/CSV 파일을 임포트 페이지에서 업로드하기
+
+스프레드 앱에서 **워크스페이스 설정** -> **임포트** 페이지로 이동합니다.
+
+![import-page](/images/import1.png)
+
+먼저 엑셀/CSV 파일을 업로드를 `Import Organizations` 버튼을 눌러 시작할 수 있습니다. Import Organizations 이름은 곧 변경될 예정이고, 조직이 아니라 개인 단위도 역시 임포트가 가능합니다.
+
+임포트시 주의해야 할 부분은 이메일 주소 입니다. 임포트하는 구독자들의 이메일 주소가 스프레드시트에 잘 기록되어 있는지 확인한 다음, 임포트를 진행해주세요.
+
+![import-page2](/images/import2.png)
+
+위 스크린샷처럼 임포트 단계를 시작합니다. 
+
+#### 한글 깨짐 현상이 있다면?
+
+임포트 단계를 거치면서, 만약 한글이 깨지는 현상이 있다면 .CSV 파일이 아닌 .XLSX 파일로 저장해서 임포트를 시도하시면 깨짐 현상이 해결됩니다.
+
+![import-page3](/images/import3.png)
+
+XLSX 파일로도 한글 깨짐 현상이 해결되지 않다면, 인코딩을 `UTF-8`로 변경해서 임포트를 시도해보세요.
+
+#### 이메일 주소 맵핑(mapping)하기
+
+![import-page4](/images/import4.png)
+
+스프레드시트 파일에 있는 구독자의 이메일 주소와 스프레드내 이메일 주소를 맵핑해주세요. 나머지 필드들은 스킵(Skip)처리를 하시거나, 필드에 맞게 맵핑해주세요.
+
+#### 임포트 완료 확인하기
+
+`Import Data` 버튼을 클릭하면 확인 메시지가 표시됩니다. 임포트를 시도하는 연락처 수가 많다면, 시간이 다소 걸릴 수도 있습니다 (수천 명 기준, 1-20분 소요). 화면에서 벗어나지 마시고 기다려주시면 임포트 완료 메시지가 나타나게 됩니다.
+
+![import-page5](https://mintlify.s3.us-west-1.amazonaws.com/relatekr/images/setup/import_menu7.png)
+
+### 자주 묻는 질문 (FAQ)
+
+<AccordionGroup>
+  <Accordion title="임포트에 성공했지만, 임포트한 연락처 수와 실제 임포트된 연락처 수가 다르면 어떻게 되나요?">
+    성공 메시지는 확인했지만, 임포트 시도한 연락처 수와 실제 임포트된 연락처 수가 다르다면, 스프레드내 컨택 중에서 여러 개의 이메일 주소를 갖고 있을 가능성이 있습니다.
+
+    예를 들어 임포트 시도하는 시트에 다음과 같은 경우가 있을 때를 가정해봅시다.
+
+    | 이름 | 이메일 주소 |
+    |------|------------|
+    | 이재용 | jy.lee@samsung.com |
+    | 이재용 | jy.lee@gmail.com |
+
+    만약 스프레드 워크스페이스에 이 두 연락처가 하나의 자연인 `이재용`의 컨택 페이지에 저장되어 있는 경우, 임포트 시도한 연락처 수와 실제 임포트된 연락처 수가 다르게 나타날 수 있습니다. 자연인 이재용 님 대상으로 이메일 커뮤니케이션을 관리하도록 되어 있기 때문에 업무 이메일과 개인 이메일 모두 임포트가 되었지만, 실제 대상은 1명이므로 스프레드에서는 2개의 이메일 주소가 한 명의 개인으로 통합됩니다.
+
+    **만약 두 이메일 주소를 전부 따로 관리하고 싶다면?**
+    
+    이런 경우, `jy.lee@samsung.com`, `jy.lee@gmail.com` 컨택을 합치지 않고 개별적으로 관리하시면 됩니다.
+  </Accordion>
+  <Accordion title="임포트 시도할 때 한글이 깨져서 들어옵니다.">
+    임포트 시도할 때 한글이 깨져서 들어오는 경우, 엑셀/CSV 파일을 임포트 시도할 때 파일을 XSLX 파일로 저장해서 임포트를 시도해보세요.
+  </Accordion>
+</AccordionGroup>
+
+
