@@ -60,6 +60,10 @@
       {
         "label": "문의하기",
         "href": "mailto:we@relate.so"
+      },
+      {
+        "label": "English",
+        "href": "https://www.spread.so/docs"
       }
     ]
   }
