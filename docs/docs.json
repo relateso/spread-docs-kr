@@ -44,7 +44,8 @@
       {
         "group": "Email Guide",
         "pages": [
-          "email-marketing"
+          "guide",
+          "why-email"
         ]
       }
     ]
@@ -69,7 +70,7 @@
       },
       {
         "label": "문의하기",
-        "href": "mailto:we@relate.so"
+        "href": "mailto:we@spread.so"
       },
       {
         "label": "English",
