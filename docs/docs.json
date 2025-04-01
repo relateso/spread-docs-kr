@@ -48,6 +48,14 @@
           "why-email"
         ]
       }
+      {
+        "group": "Imweb User Guide",
+        "pages": [
+          "imweb-integration",
+          "imweb-subsriber",
+          "imweb-custom-fields"
+        ]
+      }
     ]
   },
   "logo": {
