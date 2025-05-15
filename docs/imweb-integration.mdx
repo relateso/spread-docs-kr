@@ -91,11 +91,26 @@ sidebarTitle: "아임웹 연동 시작하기"
     ![imweb-spread11](/images/imweb11.png)
     ![imweb-spread12](/images/imweb12.png)
     2. 아래 네임서버 설정 팝업 하단의 '레코드 추가' 버튼을 눌러 Sending Records 와 Tracking Records 에 있는 정보를 입력합니다. 모두 입력하신 후에는 하단 '저장' 버튼을 통해 저장해주세요.
-    3. 다시 스프레드의 도메인 설정 페이지로 이동해 하단의 '레코드 확인' 버튼을 눌러주세요.
-3. 정상적으로 인증이 되면 아래와 같이 도메인 레코드가 인증되었다는 화면을 확인하실 수 있습니다.
+        1. 호스트 Name에서 @는 메인 도메인을 의미하는 것으로, gmail 등을 연결합니다.
+        2. 메인 도메인 설정에 영향을 주지 않기 위해서는 서브 도메인 MX, SPF(TXT) 레코드를 envelope 레코드를 포함해 추가해야합니다. 
+        3. 제공하는 레코드를 복사해서 그대로 세팅해주시면 되고 아래 내용에 유의해서 세팅해주세요.
+        ![relate-imweb](/images/relate-imweb.png)
+    3. MX 레코드 추가하는 방법
+        1. 이름 : envelope.domain (ex.envelope.relate.so)
+        2. 이름에 envelope을 추가해도 도메인 키(relate.so)만 보이니 참고해주세요. 
+    4. SPF 레코드 추가하는 방법
+        1. 이름 : envelope.domain (ex.envelope.relate.so)
+        2. 타입 : TXT
+        3. Content : v=spf1 include:amazonses.com ~all (""는 자동으로 붙으니 추가하지 않으셔도 됩니다.)
+        4. 추가하실 때 envelope 은 추가할 수 없는 단어로 나오기 때문에 envelope 뒤에 도메인을 추가해서 넣어주셔야 합니다.
+    5. CNAME 레코드 추가하는 방법
+        1. 이름 : 제공해드리는 도메인키 + 도메인 주소를 붙여서 넣으시면 됩니다.
+        2. 예: 728ytdjcoe65183hdiw.relate.so
+3. 다시 스프레드의 도메인 설정 페이지로 이동해 하단의 '레코드 확인' 버튼을 눌러주세요.
+4. 정상적으로 인증이 되면 아래와 같이 도메인 레코드가 인증되었다는 화면을 확인하실 수 있습니다.
     ![imweb-spread13](/images/imweb13.png)
     1. SPF&DMARC 정보는 도메인 주소에 따라 인증에 30분 정도 시간이 소요될 수 있습니다. 시간이 오래 지나도 인증되지 않는다면 스프레드 고객센터 ([we@relate.so](we@relate.so) 이메일, 앱 우측 하단 채팅)
-4. Cloudflare, Namecheap 등 타 사이트에서 도메인을 구매하신 경우는 [이 문서](https://docs.spread.so/domain)를 참고해주세요.
+5. Cloudflare, Namecheap 등 타 사이트에서 도메인을 구매하신 경우는 [이 문서](https://docs.spread.so/domain)를 참고해주세요.
 
 회원 정보를 연동하고 커스텀 도메인까지 연결했다면, 스프레드로 이메일을 보낼 준비를 모두 마치셨습니다!
 
