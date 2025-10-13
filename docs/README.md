@@ -8,5 +8,3 @@ Spread is a simple email platform for sending marketing, product, and transactio
 
 For any questions, please contact us at we@spread.so.
 
-
-git Test. 
