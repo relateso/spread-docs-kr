@@ -1,6 +1,6 @@
 ---
 title: "AI 임포트 (Import)"
-description: "AI를 활용해 연락처 임포트를 더 빠르게 진행할 수 있습니다"
+description: "AI를 활용해 임포트를 더 빠르게 진행할 수 있습니다"
 sidebarTitle: "AI 임포트 (Import)"
 "og:title": "AI 임포트 (Import) | 스프레드 프로덕트 가이드"
 "og:description": "AI를 활용해 연락처 임포트를 더 빠르게 진행할 수 있습니다"
@@ -17,7 +17,7 @@ AI 임포트는 CSV/Excel 파일을 업로드하면,  Spread AI가 데이터의 
 유저는 컬럼을 직접 매핑하거나, 사전에 필드를 설정할 필요가 없습니다.
 
 <Accordion title="1. 임포트 데이터 종류">
-  Spread에서 임포트할 수 있는 정보는 3가지로 나눠집니다. 
+  Spread에서 임포트할 수 있는 데이터 종류는 3가지입니다. 
    
   <img
     src="/images/ai-import/AI%20import/type.jpeg"
@@ -332,7 +332,7 @@ Failed Records 섹션 우측의 `Download CSV`을 클릭하면, 실패한 행만
   임포트에 실패하는 주요 이유에는 두 가지가 있습니다.
 
   1. **고유한 값을 가지는 필드가 중복**된 경우입니다. Spread에서는 Organization name, Contact email, Domain은 경우 서로 중복되는 값을 가질 수 없습니다.  
-&nbsp;&nbsp;예를 들어, 서로 다른 두 조직인 Spread(@example.so)과 Pixelic(@example.so)의 도메인이 같다면 중복 임포트 불가로 임포트에 실패하게 됩니다.
+&nbsp;&nbsp;예를 들어, 서로 다른 두 조직인 Spread(@example.so)와 Pixelic(@example.so)의 도메인이 같다면 중복 임포트 불가로 임포트에 실패하게 됩니다.
     특히, **도메인의 경우, 입력하지 않아도 이메일 기반으로 자동 생성**되기 때문에 주의가 필요합니다.
 
   <span style={{ display: "block", height: "6px" }} />
@@ -340,6 +340,24 @@ Failed Records 섹션 우측의 `Download CSV`을 클릭하면, 실패한 행만
     
   <span style={{ display: "block", height: "6px" }} />
   실패한 행은 결과 페이지의 Failed Records 섹션에서 확인할 수 있으며, 실패한 행만 포함된 CSV 파일을 다운로드해 수정 후 다시 임포트할 수 있습니다.
+</Accordion>
+
+<Accordion title="임포트에 성공했지만, 임포트 시도한 연락처 수와 실제 임포트된 연락처 수가 다르면 어떻게 하나요?">
+ 임포트는 정상적으로 완료되었지만, 임포트 시도한 연락처 수와 실제 임포트된 연락처 수가 다르다면, 스프레드 내 하나의 연락처가 여러 개의 이메일 주소를 갖고 있을 가능성이 있습니다.
+
+    예를 들어 임포트 시도하는 시트에 다음과 같은 경우가 있을 때를 가정해봅시다.
+
+    | 이름 | 이메일 주소 |
+    |------|------------|
+    | 김현준 | arthur@spread.so |
+    | 김현준 | arthur@gmail.com |
+
+    만약 스프레드 워크스페이스에 위 두 칸이 동일 인물 `김현준`의 하나의 연락처로 임포트되었다면, 임포트 시도한 연락처 수와 실제 생성된 연락처 수는 다르게 나타날 수 있습니다.
+    업무 이메일과 개인 이메일이 모두 임포트되었더라도, 실제 대상은 동일한 한 사람이기 때문에 스프레드에서는 **두 개의 이메일 주소가 한명의 개인으로 통합**되어 관리됩니다.
+
+    **만약 두 이메일 주소를 전부 따로 관리하고 싶다면?**
+    
+    이런 경우, `arthur@spread.so`와 `arthur@gmail.com` 의 연락처를 합치지 않고 개별적으로 관리하시면 됩니다. 
 </Accordion>
 
 <Accordion title="기존 임포트 방식과 어떤 차이가 있나요?">
