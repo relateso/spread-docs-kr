@@ -34,13 +34,7 @@
         "pages": [
           "quickstart",
           "domain",
-          {
-            "group": "임포트",
-            "pages": [
-              "import",
-              "ai-import"
-            ]
-          },
+          "ai-import",
           "send-email",
           "metrics",
           "manage-lists",
