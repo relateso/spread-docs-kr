@@ -1,0 +1,203 @@
+---
+title: "Spread | Emma 작동 방식"
+description: "Spread에서 Emma가 어떻게 작동하는지 단계별로 설명합니다."
+sidebarTitle: "Spread | Emma 작동 방식"
+"og:title": "Spread | Emma 작동 방식 | 스프레드 프로덕트 가이드"
+"og:description": "Spread에서 Emma가 어떻게 작동하는지 단계별로 설명합니다."
+"og:image": "https://relateso.sirv.com/spread/spread-docs.png"
+"twitter:title": "Spread | Emma 작동 방식 | 스프레드 프로덕트 가이드"
+"twitter:description": "Spread에서 Emma가 어떻게 작동하는지 단계별로 설명합니다."
+"twitter:image": "https://relateso.sirv.com/spread/spread-docs.png"
+---
+
+## Overview
+<img
+  src="/images/allworkflow.png"
+  alt="EMMA workflow"
+  width="720"
+  style={{
+    display: "block",
+    margin: "12px auto 24px",
+    boxShadow: "0 10px 28px rgba(0, 0, 0, 0.18)",
+    borderRadius: "12px"
+  }}
+/>
+<Steps>
+  <Step title="수집되는 리드 분류하기"></Step>
+  <Step title="분류된 리드에 맞는 이메일 흐름 연결">
+  </Step>
+  <Step title="이메일 반응을 기준으로 하는 다음 단계 판단">
+  </Step>
+  <Step title="리드 재활용"></Step>
+</Steps>
+
+
+## STEP 1. 수집되는 리드 분류하기
+
+- 리드가 어떤 경로로 들어오든 한 곳에 모이고 리스트로 정리됩니다.
+- 리드 유입 경로  
+      
+    <Accordion title="Relate Form">
+        Form으로 들어오는 리드는 응답 내용에 따라 들어오는 순간부터 자동으로 나뉩니다.(Routing)
+        (예) “A 제품에 관심” 응답 → A 제품 리스트로 자동 분류
+    </Accordion>
+
+    <Accordion title="Relate Docs">
+        .
+    </Accordion>
+
+    <Accordion title="AI Import">
+        .
+    </Accordion>
+
+    <Accordion title="Zapier">
+        .
+    </Accordion>
+
+    <Accordion title="API">
+        .
+    </Accordion>
+
+
+리드는 온도와 반응에 따라 아래 두 가지 상태로 자동으로 분류되며, 각 분류에 따라 이후 이메일 흐름이 결정됩니다.
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+  <div className="border border-gray-200 rounded-lg p-3">
+    &nbsp;&nbsp;✅ **SQL**<span style={{ fontSize: "0.875em", fontWeight: 700 }}> (Sales Qualified Lead)</span>  
+    <span style={{ display: "inline-block", paddingLeft: "24px" }}>: 관심도가 높은 ICP</span>
+    - 임포트된 데이터에서 산업군, 매출 규모 등 ICP 기준에 명확히 부합하는 정보가 있는 경우
+    - 폼에서 특정 제품에 대한 관심을 명시한 경우
+    - 유입 경로가 명확히 분류된 경우
+    - 마케팅 이메일을 반복적으로 열람한 경우
+    - 내부 링크를 3회 이상 클릭한 경우 *(기준은 팀 설정에 따라 조정 가능)*
+  </div>
+  <div className="border border-gray-200 rounded-lg p-3">
+    &nbsp;&nbsp;✅ **MQL**<span style={{ fontSize: "0.875em", fontWeight: 700 }}> (Marketing Qualified Lead)</span>     
+    <span style={{ display: "inline-block", paddingLeft: "24px" }}>: 관심도 확인이 필요한 리드</span>
+    - 마케팅 이메일을 열었으나 추가 클릭이나 회신은 없는 경우
+    - 콘텐츠를 일부만 열람한 경우
+    - 웨비나 / 이벤트에 참여했으나 참여도가 높지 않은 경우
+    - 캠페인 이메일에 간헐적으로 반응한 경우
+  </div>
+</div>
+
+
+<br />
+## STEP 2. 분류된 리드에 맞는 이메일 흐름 연결
+
+각 리드에 맞는 이메일 흐름을 자동으로 시작합니다.
+
+<img
+  src="/images/partworkflow.png"
+  alt="EMMA flow detail"
+  width="720"
+  style={{
+    display: "block",
+    margin: "12px auto 24px",
+    boxShadow: "0 10px 28px rgba(0, 0, 0, 0.18)",
+    borderRadius: "12px"
+  }}
+/>
+
+#### **✅ SQL 리드: 미팅으로 바로 이어지는 흐름**
+
+SQL로 분류된 리드는 이미 관심도와 적합도가 충분히 확인된 상태입니다.  
+이 리드에게는 **세일즈 팔로업 중심의 이메일** 흐름이 즉시 연결됩니다.  
+<div style={{ marginTop: "-12px" }}>
+  - **미팅 제안 메시지**
+- **후속 리마인드 이메일 (시퀀스)**
+  - 일정 예약 전까지 단계적으로 발송됩니다.
+  - 각 단계의 발송 시점은 설정에서 자유롭게 조정할 수 있습니다.
+</div>
+
+동시에, 리드가 미팅 전에 맥락을 이해할 수 있도록 **온보딩 콘텐츠**도 함께 전달됩니다.  
+그 결과, 관심이 식기 전에 자연스럽게 미팅으로 이어지는 흐름이 만들어집니다.  
+
+  
+  
+#### **✅ MQL 리드: 관심을 확인하고 키우는 흐름**
+
+MQL로 분류된 리드는 아직 바로 미팅을 제안하기엔 이른 상태입니다.  
+이 리드에게는 관심이 있는지를 확인하고 키우는 **마케팅 이메일** 흐름이 연결됩니다.
+
+<div>
+  먼저 **온보딩 콘텐츠가 포함된 자동화 캠페인**을 발송하여 리드의 반응을 지속적으로 추적합니다. 사전에 설정된 기준에 따라 리드 상태가 재평가됩니다.
+  <ul style={{ marginTop: "-2px", marginBottom: "-8px" }}>
+    <li style={{ marginBottom: "-6px" }}>기준 충족 시: 해당 리드는 **SQL로 전환**되어, **세일즈 팔로업 이메일** 흐름이 이어집니다.</li>
+    <li>기준 미충족 시: 뉴스레터, 캠페인 이메일 등 **너쳐링 흐름**이 유지됩니다.</li>
+  </ul>
+</div>
+
+예를 들어, 누적 클릭 수가 사전에 설정한 기준값에 도달하면 해당 리드는 자동으로 SQL로 전환됩니다. *(기준값은 사용자 설정에 따라 조정할 수 있습니다.)*  
+리드는 부담 없이 콘텐츠를 받아보며, 반응이 쌓이는 순간에만 다음 단계로 이동합니다.
+
+
+<Note>
+  즉, Spread | Emma는 리드 상태에 따라 발송 방식을 자동으로 선택합니다.
+
+  - 관심을 키워야 할 리드 → **캠페인** (너처링 콘텐츠, 뉴스레터 등)
+  - 반응을 확인하는 단계 → **자동화 캠페인** (온보딩 콘텐츠)
+  - 미팅까지 대화가 가능한 리드 → **시퀀스** (세일즈 팔로업)
+</Note>
+
+
+<div style={{ height: "10px" }} />
+이 단계에서 이메일을 새로 작성할 필요가 없습니다. Emma의 **AI Writer**가 리드의 활동과 맥락을 바탕으로 미팅 전환을 목표로 한 이메일 초안을 만들어줍니다.
+이때 이메일은 단순한 템플릿이 아니라, **AI description**을 통해 회사 및 리드에 대한 기본 정보를 함께 반영해 작성됩니다.
+
+
+<br />
+## STEP 3. 이메일 반응을 기준으로 하는 다음 단계 판단
+
+Spread | Emma에서는 이메일 반응이 단순한 성과 지표로 끝나지 않습니다. 리드가 보인 반응 자체가 다음 행동을 결정하는 기준이 됩니다.
+
+**(1) 이메일 반응은 리드 단위로 자동 수집·정리됩니다**.  
+Emma는 캠페인, 자동화 캠페인, 시퀀스 이메일에 대한 모든 반응을 자동으로 기록합니다. 이 반응들은 개별 이메일이 아니라 리드 단위로 누적되어 정리됩니다.
+
+**(2) 수집되는 반응들이 판단의 신호가 됩니다**.   
+<div style={{ marginTop: "-16px" }}>
+  - **캠페인 / 자동화 캠페인 반응**: 이메일 오픈 여부, 링크 클릭 여부, 수신 거부
+  - **시퀀스 반응**: 회신 여부
+</div>
+
+이 반응들은 리드가 얼마나 관심을 가지고 있는지를 판단하는 기본 데이터가 됩니다.
+
+**(3) 이메일 이후의 행동까지 함께 봅니다.**  
+이메일의 오픈, 클릭, 회신 여부 등만으로는 리드의 관심을 충분히 알기 어렵습니다.  
+Emma는 **Pulse**(펄스)를 통해 이메일 이후의 행동까지 함께 추적합니다.
+
+<Tip>
+  **Pulse(펄스)**
+  - 누가 문서를 열어봤는지, 어디까지 읽었는지, 어떤 콘텐츠에서 머물렀는지 펄스 기능을 통해 확인할 수 있습니다.
+  - 이 정보들은 어떤 리드가 무엇에 실제로 관심을 보였는지를 보여주는 더 강력한 신호로 사용됩니다.
+</Tip>
+
+<div style={{ height: "6px" }} />
+
+**(4) 반응 결과로 ‘결과 리스트’가 만들어집니다.**  
+Emma에서는 이렇게 수집된 이메일 반응을 기준으로 새로운 리스트가 생성됩니다.  
+예를 들어, 다음과 같은 기준으로 결과 리스트가 만들어집니다.  
+<div style={{ marginTop: "-16px" }}>
+  - 최근 발송한 캠페인 이메일에서 클릭이 반복적으로 발생한 리드
+  - 시퀀스 이메일에 직접 회신한 리드
+  - 특정 콘텐츠에만 반응한 리드
+  - 미팅 일정이 확정된 리드
+  - API 연동을 통해 특정 행동을 완료한 리드 (예: 회원가입 등)
+  - 이메일 및 콘텐츠 반응이 거의 없는 리드
+</div>
+
+
+**(5) 이 리스트가 다음 흐름의 시작점이 됩니다.**  
+<div style={{ marginTop: "-16px" }}>
+  - 바로 미팅 제안으로 이어지거나
+  - 다음 이메일 발송의 시작점이 되거나
+  - **리드 리사이클링을 위한 너처링 흐름으로 이어집니다.**
+</div>
+
+
+<br />
+## STEP 4.  리드 재활용 (리드 리사이클링)
+
+반응으로 나뉜 리드 리스트는 자동화의 끝이 아니라 **다음 흐름을 결정하는 새로운 시작점**이 됩니다.  
+Emma에서는 한 번 반응이 없었다고 해서 리드가 버려지거나 멈추지 않습니다.
+모든 리드는 반응에 따라 지속적으로 재평가되며, 적절한 시점에 다음 단계로 이동할 수 있도록 관리됩니다.

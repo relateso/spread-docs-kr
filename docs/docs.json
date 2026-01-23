@@ -35,11 +35,20 @@
           "quickstart",
           "domain",
           "ai-import",
-          "spread-emma",
           "send-email",
           "metrics",
           "manage-lists",
           "crm"
+        ]
+      },
+      {
+        "group": "Spread | Emma",
+        "pages": [
+          "spread-emma",
+          "emma-workflow",
+          "emma-features",
+          "emma-impact",
+          "emma-scenarios"
         ]
       },
       {
