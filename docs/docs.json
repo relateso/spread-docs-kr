@@ -33,6 +33,7 @@
         "group": "Spread Guide",
         "pages": [
           "quickstart",
+          "spread-email-types",
           "domain",
           "ai-import",
           "send-email",
@@ -47,8 +48,17 @@
           "spread-emma",
           "emma-workflow",
           "emma-features",
-          "emma-impact",
-          "emma-scenarios"
+          "emma-scenarios",
+          "emma-faq"
+        ]
+      },
+      {
+        "group": "전환율을 높이는 Spread 부가 기능",
+        "pages": [
+          "forms",
+          "docs",
+          "meetings",
+          "pulse"
         ]
       },
       {
@@ -83,8 +93,12 @@
         "href": "https://relate.so/cal/workspaces/relate/teamkr"
       },
       {
-        "label": "소개서 다운로드",
+        "label": "Spread 소개서 다운로드",
         "href": "https://relate.so/forms/l1wsbc9k26vllajx"
+      },
+      {
+        "label": "Spread | Emma 소개서 다운로드",
+        "href": "https://public.relate.so/p/docs/rx66lf3jd56gyafk"
       },
       {
         "label": "문의하기",
