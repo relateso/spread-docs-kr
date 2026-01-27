@@ -33,9 +33,9 @@
         "group": "Spread Guide",
         "pages": [
           "quickstart",
-          "spread-email-types",
           "domain",
           "ai-import",
+          "spread-email-types",
           "send-email",
           "metrics",
           "manage-lists",
