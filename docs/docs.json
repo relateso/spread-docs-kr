@@ -38,6 +38,7 @@
           "spread-email-types",
           "send-email",
           "metrics",
+          "dashboard",
           "manage-lists",
           "crm"
         ]
