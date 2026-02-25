@@ -37,6 +37,7 @@
           "ai-import",
           "spread-email-types",
           "send-email",
+          "email-link",
           "metrics",
           "dashboard",
           "manage-lists",
