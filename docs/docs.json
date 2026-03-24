@@ -37,7 +37,7 @@
           "ai-import",
           "spread-email-types",
           "send-email",
-          "email-link",
+          "email-share-web-link",
           "metrics",
           "dashboard",
           "manage-lists",
@@ -67,7 +67,8 @@
         "group": "Email Guide",
         "pages": [
           "guide",
-          "why-email"
+          "why-email",
+          "spam-guide"
         ]
       },
       {
@@ -76,6 +77,20 @@
           "imweb-integration",
           "imweb-subscriber",
           "imweb-custom-fields"
+        ]
+      },
+      {
+        "group": "문자 메시지 발송",
+        "pages": [
+          {
+            "group": "발송 계정 셋팅하기",
+            "pages": [
+              "sms-aligo",
+              "sms-other"
+            ]
+          },
+          "sms-template",
+          "sms-automation"
         ]
       }
     ]

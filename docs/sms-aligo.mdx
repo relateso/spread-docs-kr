@@ -1,0 +1,87 @@
+---
+title: "알리고 연동하기"
+description: "Spread에서 알리고 SMS를 연동하기 위한 설정 방법을 안내합니다."
+sidebarTitle: "알리고 연동하기"
+"og:title": "알리고 연동하기 | 스프레드 프로덕트 가이드"
+"og:description": "Spread에서 알리고 SMS를 연동하기 위한 설정 방법을 안내합니다."
+"og:image": "https://relateso.sirv.com/spread/spread-docs.png"
+"twitter:title": "알리고 연동하기 | 스프레드 프로덕트 가이드"
+"twitter:description": "Spread에서 알리고 SMS를 연동하기 위한 설정 방법을 안내합니다."
+"twitter:image": "https://relateso.sirv.com/spread/spread-docs.png"
+---
+
+## Overview
+
+Spread에서 알리고 SMS를 사용하려면 아래 3단계를 순서대로 완료해야 합니다.
+
+<Steps>
+  <Step title="알리고 회원가입 및 API KEY 발급">
+    알리고 계정을 만들고 API KEY를 발급받습니다.
+  </Step>
+  <Step title="Spread에 API 등록하기">
+    Spread 워크스페이스 설정에서 알리고 연동 정보를 입력합니다.
+  </Step>
+  <Step title="Spread 서버 IP 등록하기">
+    알리고 API 관리 페이지에 Spread 고정 IP 3개를 모두 등록합니다.
+  </Step>
+</Steps>
+
+## Step 1. 알리고 회원가입 및 API KEY 발급
+
+- [알리고 홈페이지](https://smartsms.aligo.in) 접속 후 회원가입합니다.
+- [API 관리 페이지](https://smartsms.aligo.in/admin/api/auth.html)에서 `API KEY 발급 신청` 버튼을 클릭합니다.
+
+<Note>
+이미 발급된 경우에는 기존 KEY를 사용하시면 됩니다.
+</Note>
+
+### Step 2. Spread에 API 등록하기
+
+`워크스페이스 설정 > 외부서비스 연동 > SMS` 에서 알리고 계정 정보를 등록합니다.
+
+1. 앱 좌측 상단 워크스페이스 이름을 클릭한 뒤 **워크스페이스 설정**을 클릭합니다.
+<img src="/images/sms-ws-settings.png" alt="워크스페이스 설정" width="700" />
+
+2. 좌측 메뉴에서 **외부 서비스 연동**을 클릭합니다.
+<img src="/images/sms-ws-integration.png" alt="외부 서비스 연동" width="700" />
+
+3. **SMS**를 클릭합니다.
+<img src="/images/sms-integration-sms.png" alt="SMS 연동" width="700" />
+
+4. **API Key**, **Aligo User ID**, **Sender Number**를 입력한 뒤 **Add**를 클릭합니다.
+<img src="/images/sms-integration-form.png" alt="SMS 연동 입력 폼" width="700" />
+
+<Note>
+워크스페이스 설정은 앱 좌측 상단 워크스페이스 이름 클릭 > 설정에서 접근할 수 있습니다.
+</Note>
+
+## Step 3. Spread 서버 IP 등록하기
+
+[알리고 API 관리 페이지](https://smartsms.aligo.in/admin/api/auth.html)의 `IP 추가`에서 아래 3개 IP를 모두 등록합니다.
+
+- `3.35.145.216`
+- `3.39.107.111`
+- `54.180.167.12`
+
+<Warning>
+3개 IP를 모두 등록해야 합니다. 하나라도 누락되면 인증 오류가 발생할 수 있습니다.
+</Warning>
+
+<img src="/images/aligo-step1-auth.png" alt="알리고 신청/인증 탭" width="700" />
+<img src="/images/aligo-step3-ip.png" alt="알리고 IP 추가하기" width="700" />
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="IP 추가 항목이 안 보여요">
+    API KEY 발급 후 페이지를 새로고침해 보세요.
+  </Accordion>
+  <Accordion title="ARS 인증이 안 돼요">
+    명의를 먼저 확인한 뒤, 필요하면 알리고 고객센터 `010-1234-5678`로 문의해 주세요.
+  </Accordion>
+  <Accordion title="API 인증 오류가 나요">
+    IP 3개가 모두 등록되어 있는지 다시 확인해 주세요.
+  </Accordion>
+</AccordionGroup>
+
+문의가 필요하시면 `we@spread.so`로 연락하시거나 앱 우측 하단 `문의하기`를 이용해 주세요.
