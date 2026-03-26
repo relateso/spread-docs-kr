@@ -1,42 +1,71 @@
 ---
-title: "자동화 연결하기"
-description: "SMS 템플릿을 캠페인과 자동화에 연결하는 방법을 안내합니다."
-sidebarTitle: "자동화 연결하기"
-"og:title": "자동화 연결하기 | 스프레드 프로덕트 가이드"
-"og:description": "SMS 템플릿을 캠페인과 자동화에 연결하는 방법을 안내합니다."
+title: "SMS 발송하기"
+description: "일회성 및 자동화 SMS를 발송하는 방법을 안내합니다."
+sidebarTitle: "SMS 발송하기"
+"og:title": "SMS 발송하기 | 스프레드 프로덕트 가이드"
+"og:description": "일회성 및 자동화 SMS를 발송하는 방법을 안내합니다."
 "og:image": "https://relateso.sirv.com/spread/spread-docs.png"
-"twitter:title": "자동화 연결하기 | 스프레드 프로덕트 가이드"
-"twitter:description": "SMS 템플릿을 캠페인과 자동화에 연결하는 방법을 안내합니다."
+"twitter:title": "SMS 발송하기 | 스프레드 프로덕트 가이드"
+"twitter:description": "일회성 및 자동화 SMS를 발송하는 방법을 안내합니다."
 "twitter:image": "https://relateso.sirv.com/spread/spread-docs.png"
 ---
 
 ## Overview
 
-SMS 템플릿을 캠페인과 자동화에 연결하는 방법을 알아보세요.
+일회성 및 자동화 SMS를 발송하는 방법을 안내합니다.
 
-## 일회성 캠페인
+### 일회성 캠페인
 
-- 현재 API로 먼저 지원됩니다.
+1. 사이드바에서 **SMS 발송** 클릭 후 **+ 새 SMS 발송** 버튼을 클릭합니다.
+
+<img src="/images/sms-one-off-sidebar.png" alt="사이드바 SMS 발송" />
+<img src="/images/sms-one-off-list.png" alt="새 SMS 발송 버튼" />
+
+2. 발송명, 수신자 리스트, 발신 번호를 입력한 뒤 **SMS 발송 생성**을 클릭합니다.
 
 <Note>
-발송 인터페이스(one-off)도 곧 지원될 예정입니다.
+발송명은 발신할 SMS의 이름입니다. 수신자에게는 노출되지 않습니다.
 </Note>
+
+<img src="/images/sms-one-off-form.png" alt="새 SMS 발송 폼" />
+
+3. 발신 번호, 수신자 리스트, 내용을 입력한 뒤 **발송** 버튼을 클릭합니다.
+<img src="/images/sms-one-off-send.png" alt="SMS 발송 화면" />
 
 ### 자동화 캠페인
 
-현재 Triggered Campaign을 지원합니다.
+아래 두 가지 방법으로 자동화 SMS를 설정할 수 있습니다.
 
-1. 사이드바에서 **리스트**를 클릭한 뒤 **+ 새 리스트**로 리스트를 생성합니다.
-<img src="/images/sms-auto-list.png" alt="리스트 생성" />
+<Tabs>
+  <Tab title="방법 1. 자동화 SMS 메뉴">
+    사이드바에서 **자동화 SMS**를 클릭하여 SMS 템플릿을 작성합니다.
 
-2. 생성된 리스트에서 상단 **자동화** 탭을 클릭합니다.
-<img src="/images/sms-auto-tab.png" alt="자동화 탭" />
+    <Note>현재 사이드바에서는 템플릿 작성만 가능합니다. 수신자 리스트 연결 등 나머지 설정은 방법 2(리스트 기반)를 통해 진행해주세요.</Note>
 
-3. **액션 추가**를 클릭한 뒤 **SMS**를 선택합니다.
-<img src="/images/sms-auto-action.png" alt="액션에서 SMS 추가" />
+    <img src="/images/sms-auto-sidebar.png" alt="자동화 SMS 사이드바" />
+    <img src="/images/sms-auto-new.png" alt="새 자동화 SMS 버튼" />
 
-4. 리스트에 연락처가 추가되면 자동으로 SMS가 발송됩니다.
+    템플릿 작성 화면에서 아래 항목을 입력합니다.
+    - 이름: 발신할 템플릿의 이름입니다. 수신자에게는 노출되지 않습니다.
+    - 발신자: API 연동 후 선택할 수 있습니다.
+    - 본문: `{{`를 키보드로 입력하여 개인화 변수를 사용할 수 있습니다.
 
-5. 실행 기록은 연결된 노드의 실행 결과를 클릭해 확인할 수 있습니다.
-<img src="/images/sms-auto-node.png" alt="연결 노드 실행 결과" />
-<img src="/images/sms-auto-history.png" alt="실행 기록" />
+    <img src="/images/sms-auto-form.png" alt="새 자동화 SMS 폼" />
+  </Tab>
+  <Tab title="방법 2. 리스트 기반">
+    1. 사이드바에서 **리스트**를 클릭한 뒤 **+ 새 리스트**로 리스트를 생성합니다.
+    <img src="/images/sms-auto-list.png" alt="리스트 생성" />
+
+    2. 생성된 리스트에서 상단 **자동화** 탭을 클릭합니다.
+    <img src="/images/sms-auto-tab.png" alt="자동화 탭" />
+
+    3. **액션 추가**를 클릭한 뒤 **SMS**를 선택합니다.
+    <img src="/images/sms-auto-action.png" alt="액션에서 SMS 추가" />
+
+    4. 리스트에 연락처가 추가되면 자동으로 SMS가 발송됩니다.
+
+    5. 실행 기록은 연결된 노드의 실행 결과를 클릭해 확인할 수 있습니다.
+    <img src="/images/sms-auto-node.png" alt="연결 노드 실행 결과" />
+    <img src="/images/sms-auto-history.png" alt="실행 기록" />
+  </Tab>
+</Tabs>
