@@ -67,8 +67,17 @@
         "group": "Email Guide",
         "pages": [
           "guide",
-          "why-email",
-          "spam-guide"
+          {
+            "group": "전달률 높은 이메일 쓰는 법",
+            "pages": [
+              "spam-guide/index",
+              "spam-guide/sender-reputation",
+              "spam-guide/list-hygiene",
+              "spam-guide/content",
+              "spam-guide/cold-email"
+            ]
+          },
+          "why-email"
         ]
       },
       {
@@ -90,10 +99,7 @@
             ]
           },
           "sms-template",
-          {
-            "page": "sms-automation",
-            "title": "SMS 발송하기"
-          }
+          "sms-automation"
         ]
       }
     ]
