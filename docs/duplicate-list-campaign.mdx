@@ -1,0 +1,81 @@
+---
+title: "중복 허용 리스트 & AI 캠페인 어시스턴트"
+description: "한 연락처에 여러 개의 항목을 담아 표 형식으로 이메일을 발송하는 방법을 안내합니다."
+---
+
+## Overview
+
+한 명의 연락처에 여러 개의 항목을 각각 별도 행으로 등록하고, 이를 표 형식으로 이메일에 담아 발송할 수 있습니다.
+
+아래 3단계를 순서대로 완료하면 됩니다.
+
+<Steps>
+  <Step title="중복 허용 리스트 만들기">
+    동일한 이메일 주소를 여러 번 등록할 수 있는 리스트를 생성합니다.
+  </Step>
+  <Step title="중복 허용 캠페인 만들기">
+    중복 허용 리스트를 대상으로 하는 캠페인을 생성합니다.
+  </Step>
+  <Step title="이메일에 테이블 삽입하기">
+    `[[grouped_entries_table]]` 변수를 사용해 여러 항목을 표로 자동 표시합니다.
+  </Step>
+</Steps>
+
+---
+
+## Step 1. 중복 허용 리스트 만들기
+
+1. 좌측 메뉴에서 **리스트** 진입 후 **새 리스트** 클릭
+2. **"중복 허용(Allow Duplicates)"** 옵션 활성화 후 리스트 생성
+
+<img src="/images/new-list-duplicate.png" alt="새 리스트 생성 - 중복 허용 옵션" style={{borderRadius: '8px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)'}} />
+
+3. 리스트에서 **커스텀 필드**를 추가합니다.
+
+   커스텀 필드는 리스트에 입력할 항목을 직접 정의하는 필드입니다. (예: 사용 회사명, 엔드유저 네임, 제품명, 수량, 만료일, 계약번호...) 여기서 추가한 필드가 이메일 테이블의 열(column)로 표시됩니다.
+   - 필드 순서가 이메일 테이블에 표시되는 순서를 결정합니다.
+   - 날짜 데이터는 **Date 타입**으로 지정하는 것을 권장합니다.
+
+<img src="/images/custom-field-manage.png" alt="커스텀 필드 관리" style={{borderRadius: '8px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)'}} />
+
+<img src="/images/custom-field-add.png" alt="사용자 정의 필드 추가" style={{borderRadius: '8px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)'}} />
+
+<Note>
+연락처와 리스트는 별개의 개념입니다. 한 번이라도 등록된 이메일은 연락처에 저장되고, 이후 리스트에 중복으로 추가할 수 있습니다.
+</Note>
+
+---
+
+## Step 2. 중복 허용 캠페인 만들기
+
+1. **캠페인** 메뉴에서 **새 중복 허용 캠페인**을 선택합니다.
+
+<img src="/images/new-duplicate-campaign.png" alt="새 중복허용 캠페인" style={{borderRadius: '8px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)'}} />
+
+2. 대상 리스트로 중복 허용 리스트를 선택합니다.
+
+<Tip>
+기존 캠페인을 **복제(Duplicate)** 한 후 내용만 수정하면 다른 캠페인에도 바로 재사용할 수 있습니다.
+</Tip>
+
+---
+
+## Step 3. 이메일에 테이블 삽입하기
+
+`{{grouped_entries_table}}` 변수를 이메일 본문에 삽입하면, 해당 수신자의 리스트 항목들이 자동으로 하나의 표로 합쳐져 표시됩니다.
+
+1. 이메일 본문 편집 화면에서 **`{{grouped_entries_table}}`** 변수를 삽입합니다.
+
+<img src="/images/grouped-entries-table-variable.png" alt="grouped_entries_table 변수 삽입" style={{borderRadius: '8px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)'}} />
+
+2. 발송 전 테스트 이메일로 확인할 수 있습니다. 중복허용 테이블 필드에 테스트 값을 입력 후 **테스트 이메일 발송**을 클릭하세요.
+
+<img src="/images/test-email-send.png" alt="테스트 이메일 발송" style={{borderRadius: '8px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)'}} />
+
+3. 발송 시 수신자별로 등록된 항목이 아래와 같이 자동으로 표로 표시됩니다.
+
+<img src="/images/test-email-result.png" alt="테스트 이메일 결과" style={{borderRadius: '8px', boxShadow: '0 4px 24px rgba(0,0,0,0.10)'}} />
+
+<Note>
+동일한 변수를 그대로 사용해 다른 캠페인(교육 안내, 웰컴 EDM 등)에도 재사용할 수 있습니다.
+</Note>
