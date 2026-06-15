@@ -30,6 +30,12 @@
     },
     "pages": [
       {
+        "group": "최근 업데이트",
+        "pages": [
+          "updates"
+        ]
+      },
+      {
         "group": "Spread Guide",
         "pages": [
           "quickstart",
