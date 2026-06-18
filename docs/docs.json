@@ -36,16 +36,38 @@
         ]
       },
       {
-        "group": "Spread Guide",
+        "group": "Spread 시작하기",
         "pages": [
           "quickstart",
-          "domain",
-          "ai-import",
+          "domain"
+        ]
+      },
+      {
+        "group": "연락처 가져오기",
+        "pages": [
+          "google-contacts-sync",
+          "ai-import"
+        ]
+      },
+      {
+        "group": "이메일 발송하기",
+        "pages": [
+          "lists-and-recipients",
           "spread-email-types",
           "send-email",
-          "email-share-web-link",
+          "email-share-web-link"
+        ]
+      },
+      {
+        "group": "결과 분석하기",
+        "pages": [
           "metrics",
-          "dashboard",
+          "dashboard"
+        ]
+      },
+      {
+        "group": "구독자 관리",
+        "pages": [
           "manage-lists",
           "crm"
         ]
