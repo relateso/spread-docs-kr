@@ -129,6 +129,12 @@
           "sms-template",
           "sms-automation"
         ]
+      },
+      {
+        "group": "모두의 창업 X Spread AI",
+        "pages": [
+          "spread-ai-onboarding"
+        ]
       }
     ]
   },
