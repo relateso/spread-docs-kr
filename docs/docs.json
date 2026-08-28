@@ -55,6 +55,7 @@
           "lists-and-recipients",
           "spread-email-types",
           "send-email",
+          "html-editing",
           "email-share-web-link"
         ]
       },
