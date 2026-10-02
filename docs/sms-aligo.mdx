@@ -22,7 +22,7 @@ Spread에서 알리고 SMS를 사용하려면 아래 3단계를 순서대로 완
     Spread 워크스페이스 설정에서 알리고 연동 정보를 입력합니다.
   </Step>
   <Step title="Spread 서버 IP 등록하기">
-    알리고 API 관리 페이지에 Spread 고정 IP 3개를 모두 등록합니다.
+    알리고 API 관리 페이지에 아래 안내된 Spread 고정 IP를 모두 등록합니다.
   </Step>
 </Steps>
 
@@ -57,15 +57,20 @@ Spread에서 알리고 SMS를 사용하려면 아래 3단계를 순서대로 완
 
 ## Step 3. Spread 서버 IP 등록하기
 
-[알리고 API 관리 페이지](https://smartsms.aligo.in/admin/api/auth.html)의 `IP 추가`에서 아래 3개 IP를 모두 등록합니다.
+[알리고 API 관리 페이지](https://smartsms.aligo.in/admin/api/auth.html)의 `IP 추가`에서 아래 IP를 모두 등록합니다.
 
 - `3.35.145.216`
 - `3.39.107.111`
 - `54.180.167.12`
+- `54.116.145.183`
 
 <Warning>
-3개 IP를 모두 등록해야 합니다. 하나라도 누락되면 인증 오류가 발생할 수 있습니다.
+목록의 IP를 모두 등록해야 합니다. 하나라도 누락되면 인증 오류가 발생할 수 있습니다.
 </Warning>
+
+<Note>
+**이미 알리고를 연동해 쓰고 있다면** 2026년 10월 Spread 서버 이전으로 등록해야 할 IP가 하나 늘었습니다(`54.116.145.183`). 기존에 등록한 IP는 그대로 두고, 위 목록의 IP가 모두 등록되어 있는지 확인해 주세요. 누락된 IP가 있으면 알림톡 발송이 '인증되지 않는 서버 IP' 오류로 실패합니다.
+</Note>
 
 <img src="/images/aligo-step1-auth.png" alt="알리고 신청/인증 탭" width="700" />
 <img src="/images/aligo-step3-ip.png" alt="알리고 IP 추가하기" width="700" />
@@ -80,7 +85,7 @@ Spread에서 알리고 SMS를 사용하려면 아래 3단계를 순서대로 완
     명의를 먼저 확인한 뒤, 필요하면 알리고 고객센터 `010-1234-5678`로 문의해 주세요.
   </Accordion>
   <Accordion title="API 인증 오류가 나요">
-    IP 3개가 모두 등록되어 있는지 다시 확인해 주세요.
+    `인증되지 않는 서버 IP로 부터의 호출 입니다` 라는 메시지라면 Step 3의 IP가 모두 등록되어 있는지 다시 확인해 주세요. 2026년 10월에 등록해야 할 IP가 추가되었으니 이전에 연동한 계정도 목록과 대조해 주세요.
   </Accordion>
 </AccordionGroup>
 
